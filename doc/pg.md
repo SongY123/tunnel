@@ -5,6 +5,8 @@
 ```
 wal_level = 'logical';
 max_replication_slots = 5; #该值要大于1
+alter system set wal_level='logical';
+alter system set max_replication_slots = 5;
 ```
 
 **修改后需要重启才能生效**
@@ -13,7 +15,7 @@ max_replication_slots = 5; #该值要大于1
 
 ```sql
 CREATE ROLE test_rep LOGIN  ENCRYPTED PASSWORD 'xxxx' REPLICATION;
-GRANT CONNECT ON DATABASE test_database to test_rep;
+GRANT CONNECT ON DATABASE test_db to test_rep;
 ```
 
 ## 修改白名单配置

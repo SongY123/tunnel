@@ -1,0 +1,125 @@
+tunnel_subscribe_config:
+  pg_dump_path: ''
+  subscribes:
+    - slotName: "slot_for_chdl_th03_01_1"
+      pgConnConf:
+        host: localhost
+        port: 5432
+        database: test_db1
+        user: postgres
+        password: 123456
+      rules:
+        - { table: chdl_th03-01_dgp_l1b, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l1b, type: type }
+        - { table: chdl_th03-01_sxzp_l1a, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l1a, type: type }
+        - { table: chdl_th03-01_sxzf_l0, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l0, type: type }
+        - { table: chdl_th03-01_gnss_l0, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_gnss_l0, type: type }
+        - { table: chdl_th03-01_att_l0, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_att_l0, type: type }
+        - { table: chdl_th03-01_sxzf_l0_gc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l0_gc, type: type }
+        - { table: chdl_th03-01_dgp_l1a, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l1a, type: type }
+        - { table: chdl_th03-01_las_l1a, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_las_l1a, type: type }
+        - { table: chdl_th03-01_sxzf_l1a, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l1a, type: type }
+        - { table: chdl_th03-01_dgp_l0, pks: [dataId], esid: [dataId], index: chdl_th03-01_dgp_l0, type: type, fields: {meta.imageInfo.corners: "geo_shape", meta.imageInfo.centreLocation: "geo_shape"} }
+        - { table: chdl_th03-01_ggps_l0, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggps_l0, type: type }
+        - { table: chdl_th03-01_ggps_l1a, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggps_l1a, type: type }
+        - { table: chdl_th03-01_ggpv_l0, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggpv_l0, type: type }
+        - { table: chdl_th03-01_ggpv_l1a, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggpv_l1a, type: type }
+        - { table: chdl_th03-01_sxzp_l0, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l0, type: type }
+        - { table: chdl_th03-01_sxz_l1b, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxz_l1b, type: type }
+        - { table: chdl_th03-01_sxz_l4_dsm, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxz_l4_dsm, type: type }
+        - { table: chdl_th03-01_sxzp_l4_dom, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l4_dom, type: type }
+        - { table: chdl_th03-01_dgp_l4_dom, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l4_dom, type: type }
+        - { table: chdl_th03-01_ggpvs_l1b_ori, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggpvs_l1b_ori, type: type }
+        - { table: chdl_th03-01_las_l0, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_las_l0, type: type }
+        - { table: chdl_th03-01_sxzp_l2, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l2, type: type }
+        - { table: chdl_th03-01_sxzf_l2, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l2, type: type }
+        - { table: chdl_th03-01_sxzp_l3, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l3, type: type }
+        - { table: chdl_th03-01_sxzf_l3, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l3, type: type }
+        - { table: chdl_th03-01_dgp_l2, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l2, type: type }
+        - { table: chdl_th03-01_dgp_l3, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l3, type: type }
+        - { table: chdl_th03-01_ggp_l2, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l2, type: type }
+        - { table: chdl_th03-01_ggpv_l2, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggpv_l2, type: type }
+        - { table: chdl_th03-01_ggps_l2, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggps_l2, type: type }
+        - { table: chdl_th03-01_ggp_l3, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l3, type: type }
+        - { table: chdl_th03-01_ggpv_l3, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggpv_l3, type: type }
+        - { table: chdl_th03-01_ggps_l3, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggps_l3, type: type }
+        - { table: chdl_th03-01_att-01, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_att-01, type: type }
+        - { table: chdl_th03-01_att-02, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_att-02, type: type }
+        - { table: chdl_th03-01_att-03, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_att-03, type: type }
+        - { table: chdl_th03-01_att-04, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_att-04, type: type }
+        - { table: chdl_th03-01_att-05, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_att-05, type: type }
+        - { table: chdl_th03-01_att-06, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_att-06, type: type }
+        - { table: chdl_th03-01_att-07, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_att-07, type: type }
+        - { table: chdl_th03-01_att-08, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_att-08, type: type }
+        - { table: chdl_th03-01_ggp_l1a, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l1a, type: type }
+        - { table: chdl_th03-01_ggp_l1b, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l1b, type: type }
+        - { table: chdl_th03-01_ggp_l1c, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l1c, type: type }
+        - { table: chdl_th03-01_ggpv_l1b, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggpv_l1b, type: type }
+        - { table: chdl_th03-01_ggps_l1b, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggps_l1b, type: type }
+        - { table: chdl_th03-01_ggp_l6, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l6, type: type }
+        - { table: chdl_th03-01_gendata, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_gendata, type: type }
+        - { table: chdl_th03-01_defdata, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_defdata, type: type }
+        - { table: chdl_th03-01_tedata, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_tedata, type: type }
+        - { table: chdl_th03-01_las-1_l0_gc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_las-1_l0_gc, type: type }
+        - { table: chdl_th03-01_las-2_l0_gc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_las-2_l0_gc, type: type }
+        - { table: chdl_th03-01_las-3_l0_gc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_las-3_l0_gc, type: type }
+        - { table: chdl_th03-01_sxzf_l1a_gc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l1a_gc, type: type }
+        - { table: chdl_th03-01_sxzp_l0_gc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l0_gc, type: type }
+        - { table: chdl_th03-01_sxzp_l1a_gc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l1a_gc, type: type }
+        - { table: chdl_th03-01_dgp_b1_l0_gc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_b1_l0_gc, type: type }
+        - { table: chdl_th03-01_dgp_b2_l0_gc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_b2_l0_gc, type: type }
+        - { table: chdl_th03-01_dgp_b3_l0_gc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_b3_l0_gc, type: type }
+        - { table: chdl_th03-01_dgp_b4_l0_gc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_b4_l0_gc, type: type }
+        - { table: chdl_th03-01_ggpv_l0_gc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggpv_l0_gc, type: type }
+        - { table: chdl_th03-01_ggps_l0_gc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggps_l0_gc, type: type }
+        - { table: chdl_th03-01_sxzf_l1a_src, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l1a_src, type: type }
+        - { table: chdl_th03-01_sxzp_l1a_src, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l1a_src, type: type }
+        - { table: chdl_th03-01_dgp_l1a_src, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l1a_src, type: type }
+        - { table: chdl_th03-01_ggpv_l1a_src, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggpv_l1a_src, type: type }
+        - { table: chdl_th03-01_ggps_l1a_src, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggps_l1a_src, type: type }
+        - { table: chdl_th03-01_ggp_l1a_src, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l1a_src, type: type }
+        - { table: chdl_th03-01_sxzf_l0_dc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l0_dc, type: type }
+        - { table: chdl_th03-01_sxzp_l0_dc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l0_dc, type: type }
+        - { table: chdl_th03-01_dgp_l0_dc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l0_dc, type: type }
+        - { table: chdl_th03-01_sxzf_l0_rrc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l0_rrc, type: type }
+        - { table: chdl_th03-01_sxzp_l0_rrc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l0_rrc, type: type }
+        - { table: chdl_th03-01_dgp_l0_rrc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l0_rrc, type: type }
+        - { table: chdl_th03-01_sxzf_l1a_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l1a_gqa, type: type }
+        - { table: chdl_th03-01_sxzp_l1a_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l1a_gqa, type: type }
+        - { table: chdl_th03-01_dgp_l1a_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l1a_gqa, type: type }
+        - { table: chdl_th03-01_ggp_l1a_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l1a_gqa, type: type }
+        - { table: chdl_th03-01_sxz_l1b_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxz_l1b_gqa, type: type }
+        - { table: chdl_th03-01_dgp_l1b_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l1b_gqa, type: type }
+        - { table: chdl_th03-01_ggp_l1b_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l1b_gqa, type: type }
+        - { table: chdl_th03-01_sxzf_l0_gc_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l0_gc_gqa, type: type }
+        - { table: chdl_th03-01_sxzp_l0_gc_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l0_gc_gqa, type: type }
+        - { table: chdl_th03-01_dgp_l2_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l2_gqa, type: type }
+        - { table: chdl_th03-01_ggp_l2_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l2_gqa, type: type }
+        - { table: chdl_th03-01_sxzp_l2_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l2_gqa, type: type }
+        - { table: chdl_th03-01_dgp_l3_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l3_gqa, type: type }
+        - { table: chdl_th03-01_ggp_l3_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l3_gqa, type: type }
+        - { table: chdl_th03-01_sxzp_l3_gqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l3_gqa, type: type }
+        - { table: chdl_th03-01_sxzf_l1a_mtf_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l1a_mtf_rqa, type: type }
+        - { table: chdl_th03-01_sxzp_l1a_mtf_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l1a_mtf_rqa, type: type }
+        - { table: chdl_th03-01_dgp_l1a_mtf_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l1a_mtf_rqa, type: type }
+        - { table: chdl_th03-01_sxzf_l1a_snr_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l1a_snr_rqa, type: type }
+        - { table: chdl_th03-01_sxzp_l1a_snr_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l1a_snr_rqa, type: type }
+        - { table: chdl_th03-01_dgp_l1a_snr_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l1a_snr_rqa, type: type }
+        - { table: chdl_th03-01_sxzf_l1a_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l1a_rqa, type: type }
+        - { table: chdl_th03-01_sxzp_l1a_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l1a_rqa, type: type }
+        - { table: chdl_th03-01_dgp_l1a_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l1a_rqa, type: type }
+        - { table: chdl_th03-01_sxzf_l1a_dr_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l1a_dr_rqa, type: type }
+        - { table: chdl_th03-01_sxzp_l1a_dr_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzp_l1a_dr_rqa, type: type }
+        - { table: chdl_th03-01_dgp_l1a_dr_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l1a_dr_rqa, type: type }
+        - { table: chdl_th03-01_ggp_l1a_snr_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l1a_snr_rqa, type: type }
+        - { table: chdl_th03-01_ggp_l1a_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l1a_rqa, type: type }
+        - { table: chdl_th03-01_ggp_l1a_dr_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l1a_dr_rqa, type: type }
+        - { table: chdl_th03-01_ggp_l0_rrc, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l0_rrc, type: type }
+        - { table: chdl_th03-01_ggp_l1a_mtf_rqa, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggp_l1a_mtf_rqa, type: type }
+        - { table: qxsw_hz-qs04, pks: [ dataId ], esid: [ dataId ], index: qxsw_hz-qs04, type: type }
+        - { table: qxsw_cqs-nss02, pks: [ dataId ], esid: [ dataId ], index: qxsw_cqs-nss02, type: type }
+        - { table: qxsw_dpps-nss01, pks: [ dataId ], esid: [ dataId ], index: qxsw_dpps-nss01, type: type }
+        - { table: qxsw_sps-nss02, pks: [ dataId ], esid: [ dataId ], index: qxsw_sps-nss02, type: type }
+      esConf:
+        addrs:
+          - localhost:9200
+tunnel_zookeeper_address: localhost:2181

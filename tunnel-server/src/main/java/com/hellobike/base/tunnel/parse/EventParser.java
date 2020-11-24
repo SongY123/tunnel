@@ -128,7 +128,9 @@ public class EventParser implements IEventParser {
             return lexer.token();
         }
         lexer.nextToken(' ');
-        return lexer.token();
+        if (lexer.token.equals("null"))
+            return null;
+        else return lexer.token();
     }
 
 

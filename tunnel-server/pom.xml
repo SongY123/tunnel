@@ -217,6 +217,18 @@
             </exclusions>
         </dependency>
 
+      <!-- GEO相关 -->
+      <dependency>
+        <groupId>com.vividsolutions</groupId>
+        <artifactId>jts</artifactId>
+        <version>1.12</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.geotools</groupId>
+        <artifactId>gt-geojson</artifactId>
+        <version>13.6</version>
+      </dependency>
 
     </dependencies>
 
