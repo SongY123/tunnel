@@ -121,5 +121,5 @@ tunnel_subscribe_config:
         - { table: qxsw_sps-nss02, pks: [ dataId ], esid: [ dataId ], index: qxsw_sps-nss02, type: type }
       esConf:
         addrs:
-          - localhost:9200
+          - 172.16.1.81:9200
 tunnel_zookeeper_address: localhost:2181

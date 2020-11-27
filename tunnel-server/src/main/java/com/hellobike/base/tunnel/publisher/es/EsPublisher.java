@@ -173,7 +173,7 @@ public class EsPublisher extends BasePublisher implements IPublisher {
         }
         Map<String, Object> r = values;
         for (int i = 0; i < keys.length - 1; i++) {
-            Object obj = values.get(keys[i]);
+            Object obj = r.get(keys[i]);
             if (obj == null) {
                 Map<String, Object> objInner = new HashMap<>();
                 r.put(keys[i], objInner);
@@ -189,7 +189,7 @@ public class EsPublisher extends BasePublisher implements IPublisher {
     public static Map<String, Object> toStructDoc(Map<String, Object> values) {
         Map<String, Object> result = new HashMap<>();
         for (Entry<String, Object> entry : values.entrySet()) {
-            insert(result, entry.getKey(), entry.getValue());
+             insert(result, entry.getKey(), entry.getValue());
         }
         return result;
     }

@@ -14,8 +14,8 @@ public class EsPublisherTest {
     @Test
     public void insert() {
         Map<String, Object> map = new HashMap<>();
-        map.put("meta.ImageInfo.corners", 1);
-        map.put("meta.ImageInfo.centreLocation", 2);
+        map.put("meta.imageInfo.corners", 1);
+        map.put("meta.imageInfo.centreLocation", 2);
         map.put("meta.test", 3);
         Map<String, Object> result = EsPublisher.toStructDoc(map);
         System.out.println(result.size());
