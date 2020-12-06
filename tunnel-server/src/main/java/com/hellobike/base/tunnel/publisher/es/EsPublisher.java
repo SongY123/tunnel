@@ -398,10 +398,7 @@ public class EsPublisher extends BasePublisher implements IPublisher {
                             .forEach(columnData -> {
                                 if (StringUtils.isNotEmpty(columnData.getValue())) {
                                     String columnName = columnData.getName().replace("\"", "");
-                                    if ("geo_shape"
-                                        .equals(esConfig.getFieldMappings().get(columnName)) ||
-                                        "geo_point"
-                                            .equals(esConfig.getFieldMappings().get(columnName))) {
+                                    if ("geo_shape".equals(esConfig.getFieldMappings().get(columnName))) {
                                         WKBReader reader = new WKBReader();
                                         Geometry geometry = null;
                                         try {
@@ -410,11 +407,33 @@ public class EsPublisher extends BasePublisher implements IPublisher {
                                             StringWriter writer = new StringWriter();
                                             GeometryJSON g = new GeometryJSON(20);
                                             g.write(geometry, writer);
-                                            r.put(columnName, JSON.parse(writer.toString()));
+                                            Shape shape = JSON.parseObject(writer.toString(), Shape.class);
+                                            Map<String, Object> map = new HashMap<>();
+                                            map.put("type", shape.getType());
+                                            map.put("coordinates", shape.getCoordinates());
+                                            r.put(columnName, map);
                                         } catch (ParseException | IOException e) {
                                             e.printStackTrace();
                                         }
-                                    } else {
+                                    } else if ("geo_point".equals(esConfig.getFieldMappings().get(columnName))) {
+                                        WKBReader reader = new WKBReader();
+                                        Geometry geometry = null;
+                                        try {
+                                            geometry = reader
+                                                .read(Bytes.fromHex(columnData.getValue()));
+                                            StringWriter writer = new StringWriter();
+                                            GeometryJSON g = new GeometryJSON(20);
+                                            g.write(geometry, writer);
+                                            Point point = JSON.parseObject(writer.toString(), Point.class);
+                                            Map<String, Object> map = new HashMap<>();
+                                            map.put("type", point.getType());
+                                            map.put("coordinates", point.getCoordinates());
+                                            r.put(columnName, map);
+                                        } catch (ParseException | IOException e) {
+                                            e.printStackTrace();
+                                        }
+                                    }
+                                    else {
                                         r.put(columnName, columnData.getValue());
                                     }
                                 }

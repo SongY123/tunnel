@@ -1,11 +1,11 @@
 tunnel_subscribe_config:
   pg_dump_path: ''
   subscribes:
-    - slotName: "slot_for_chdl_th03_01_1"
+    - slotName: "slot_for_chdl_th03_02"
       pgConnConf:
         host: localhost
         port: 5432
-        database: test_db1
+        database: metadata_db
         user: postgres
         password: 123456
       rules:
@@ -18,7 +18,7 @@ tunnel_subscribe_config:
         - { table: chdl_th03-01_dgp_l1a, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_dgp_l1a, type: type }
         - { table: chdl_th03-01_las_l1a, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_las_l1a, type: type }
         - { table: chdl_th03-01_sxzf_l1a, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_sxzf_l1a, type: type }
-        - { table: chdl_th03-01_dgp_l0, pks: [dataId], esid: [dataId], index: chdl_th03-01_dgp_l0, type: type, fields: {meta.imageInfo.corners: "geo_shape", meta.imageInfo.centreLocation: "geo_shape"} }
+        - { table: chdl_th03-01_dgp_l0, pks: [dataId], esid: [dataId], index: chdl_th03-01_dgp_l0, type: type, fields: {meta.imageInfo.corners: "geo_point", meta.imageInfo.centreLocation: "geo_point"} }
         - { table: chdl_th03-01_ggps_l0, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggps_l0, type: type }
         - { table: chdl_th03-01_ggps_l1a, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggps_l1a, type: type }
         - { table: chdl_th03-01_ggpv_l0, pks: [ dataId ], esid: [ dataId ], index: chdl_th03-01_ggpv_l0, type: type }
