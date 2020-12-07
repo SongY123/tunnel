@@ -1,4 +1,4 @@
-package com.hellobike.base.tunnel.publisher.es;
+package com.hellobike.base.tunnel.model;
 
 /**
  * @author yang.song

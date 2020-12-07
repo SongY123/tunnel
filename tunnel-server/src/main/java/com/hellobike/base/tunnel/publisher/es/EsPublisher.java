@@ -23,6 +23,8 @@ import com.hellobike.base.tunnel.model.ColumnData;
 import com.hellobike.base.tunnel.model.Event;
 import com.hellobike.base.tunnel.model.EventType;
 import com.hellobike.base.tunnel.model.InvokeContext;
+import com.hellobike.base.tunnel.model.Point;
+import com.hellobike.base.tunnel.model.Shape;
 import com.hellobike.base.tunnel.monitor.TunnelMonitorFactory;
 import com.hellobike.base.tunnel.publisher.BasePublisher;
 import com.hellobike.base.tunnel.publisher.IPublisher;
@@ -274,8 +276,8 @@ public class EsPublisher extends BasePublisher implements IPublisher {
 
                 BulkResponse response = restClient.bulk(br, requestOptions);
                 long e = System.currentTimeMillis();
-                LOG.info("indexed doc:{},cost:{}ms,result:{}", doc.size(), e - s,
-                    response.hasFailures());
+                LOG.info("indexed doc:{},cost:{}ms,success:{}", doc.size(), e - s,
+                    !response.hasFailures());
                 for (BulkItemResponse item : response.getItems()) {
                     if (item.isFailed()) {
                         LOG.error("OP: {}, index: {}, failure reason: {}", item.getOpType(),
